@@ -24,7 +24,7 @@
 	function menu_fakultas()
 	{
 		$CI = & get_instance();
-		$query = $CI->db->get('fakultas');
+		$query = $CI->db->query('select * from fakultas where id !=8');
 		return $query->result_array();
 	}
 
