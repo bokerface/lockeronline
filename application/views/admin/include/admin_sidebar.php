@@ -1,7 +1,7 @@
 <!-- Brand Logo -->
 <a href="<?= base_url() ?>admin/dashboard" class="brand-link navbar-success">
-	<img src="<?= base_url() ?>public/dist/img/logo.png" alt="Pascasarjana UMY" class="brand-image">
-	<span class="brand-text font-weight-light">BELAJAR</span>
+	<img src="<?= base_url() ?>public/dist/img/logo.png" alt="SIM Borang UMY" class="brand-image">
+	<span class="brand-text font-weight-light">SIM Borang UMY</span>
 </a>
 
 <!-- Sidebar -->
