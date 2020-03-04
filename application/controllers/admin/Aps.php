@@ -97,7 +97,7 @@ class Aps extends MY_Controller
 		$this->db->select('file');
 		$query = $this->db->get_where('dokumen_apt',array('id'=>$id));
 		$path_file = $query->row_array();
-		unlink('lockeronline/application/'.$path_file);
+		unlink(BASEPATH.$path_file);
 		//print_r($path_file);
 		$this->db->delete('dokumen_apt', array('id' => $id));
 		$this->session->set_flashdata('msg', 'Dokumen berhasil dihapus!');
