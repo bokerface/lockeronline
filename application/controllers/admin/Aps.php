@@ -13,7 +13,7 @@ class Aps extends MY_Controller
 	{
 		redirect(base_url('admin/aps/fakultas/ft'));
 	}
-
+ 
 	public function fakultas($fakultas)
 	{
 		$this->db->select('id');

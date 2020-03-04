@@ -3,16 +3,14 @@
 
     // -----------------------------------------------------------------------------
     function getUserbyId($id){
-        
         $CI = & get_instance();
         return $CI->db->get_where('ci_users', array('id' => $id))->row_array()['firstname'];
     }
 
-     function getProdiById($id){
-        
-        $CI = & get_instance();
-        return $CI->db->get_where('prodi', array('id_prodi' => $id))->row_array()['prodi'];
-    }
+    // function getProdiById($id){
+    //     $CI = & get_instance();
+    //     return $CI->db->get_where('prodi', array('id_prodi' => $id))->row_array()['prodi'];
+    // }
 
 	function menu_category()
 	{
@@ -28,5 +26,12 @@
 		return $query->result_array();
 	}
 
+	function breadcrumb($kategori)
+	{
+		$CI = & get_instance();
+		$query = $CI->db->query('select kategori_dokumen from kategori_dokumen where id='.$kategori);
+		$nama_kategori = $query->row_array();
+		return $nama_kategori['kategori_dokumen'];
+	}
 
 ?> 

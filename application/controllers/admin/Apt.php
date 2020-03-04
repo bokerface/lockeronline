@@ -15,7 +15,7 @@ class Apt extends MY_Controller
 		$this->load->view('admin/layout', $data);
 	}
 
-	public function index()
+	public function index() 
 	{
 		redirect(base_url('admin/apt/dokumen/evaluasi'));
 	}

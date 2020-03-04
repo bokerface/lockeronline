@@ -2,26 +2,25 @@
 
 <?php 
 	$last = $this->uri->total_segments();
-	$kategori = $this->uri->segment($last); 
+	$kategori = $this->uri->segment($last);
 ?>
 
-<!-- Content Header (Page header) --> 
+<!-- Content Header (Page header) -->
 <section class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Borang Evaluasi Diri
-					</br>
-					<a href="<?= base_url('admin/apt/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
-						Tambah baru
-					</a>
-				</h1>
+				<h1><?=breadcrumb($kategori)?></h1>
+				</br>
+				<a href="<?= base_url('admin/apt/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
+					Tambah baru
+				</a>
 			</div>
 
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">evaluasi</li>
+					<li class="breadcrumb-item"><a href="#">APT</a></li>
+					<li class="breadcrumb-item active"><?=breadcrumb($kategori)?></li>
 				</ol>
 			</div>
 		</div>
@@ -60,9 +59,11 @@
 								<td> <?=$dokumen['nama_dokumen']?> </td>
 								<td> <?=$dokumen['deskripsi']?> </td>
 								<td>
-								<a class="btn btn-file" href="<?= base_url('admin/apt/details/'.$dokumen['id']) ?>"><i class="fa fa-eye"></i></a>
+									<a class="btn btn-file"
+										href="<?= base_url('admin/apt/details/'.$dokumen['id']) ?>"><i
+											class="fa fa-eye"></i></a>
 									<a class="btn btn-file" href="<?=base_url($dokumen['file'] ); ?>">
-									<i class="fas fa-download"></i>
+										<i class="fas fa-download"></i>
 									</a>
 									<a class="btn btn-file"
 										data-href="<?=base_url('admin/apt/destroy/'.$dokumen['id'].'/'.$dokumen['id_kategori_dokumen']); ?>"
@@ -76,8 +77,8 @@
 					</table>
 
 				</div>
-			</div> 
- 
+			</div>
+
 		</div>
 	</div>
 </section>
@@ -114,6 +115,7 @@
 	$('#confirm-delete').on('show.bs.modal', function (e) {
 		$(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 	});
+
 </script>
 <!-- Modal delete conformation script -->
 
@@ -123,5 +125,6 @@
 		$("#tb_evaluasi").DataTable();
 	});
 
-	$(".<?=$kategori?> a.nav-link").addClass('active'); 
+	$(".<?=$kategori?> a.nav-link").addClass('active');
+
 </script>

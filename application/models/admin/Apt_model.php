@@ -11,7 +11,7 @@
 		public function get_dokumen_by_id($id)
 		{
 			$query = $this->db->get_where('dokumen_apt', array('id' => $id));
-			return $result = $query->row_array();
+			return $result = $query->row_array(); 
 		}
 
 		public function ambil_kategori()
