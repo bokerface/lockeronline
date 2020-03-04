@@ -69,7 +69,7 @@
 				$data['view'] = 'admin/siswa/tambah';
 				$this->load->view('admin/layout', $data);
 			}
-		}
+		} 
 
 		public function destroy($id)
 		{

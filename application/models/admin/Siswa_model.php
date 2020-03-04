@@ -14,7 +14,7 @@
 			return $this->db->insert('siswa', $data);
 		}
 
-		public function get_user_by_id($id)
+		public function get_user_by_id($id) 
 		{
 			$query = $this->db->get_where('siswa', array('id_siswa' => $id));
 			return $result = $query->row_array();

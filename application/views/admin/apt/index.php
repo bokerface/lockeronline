@@ -60,13 +60,14 @@
 								<td> <?=$dokumen['nama_dokumen']?> </td>
 								<td> <?=$dokumen['deskripsi']?> </td>
 								<td>
-									<a class="btn btn-success" href="<?=base_url($dokumen['file'] ); ?>">
-										Download
+								<a class="btn btn-file" href="<?= base_url('admin/apt/details/'.$dokumen['id']) ?>"><i class="fa fa-eye"></i></a>
+									<a class="btn btn-file" href="<?=base_url($dokumen['file'] ); ?>">
+									<i class="fas fa-download"></i>
 									</a>
-									<a class="btn btn-danger"
-										data-href="<?=base_url('admin/apt/destroy/'.$dokumen['id']); ?>"
+									<a class="btn btn-file"
+										data-href="<?=base_url('admin/apt/destroy/'.$dokumen['id'].'/'.$dokumen['id_kategori_dokumen']); ?>"
 										data-toggle="modal" data-target="#confirm-delete">
-										Hapus
+										<i class="fas fa-trash-alt"></i>
 									</a>
 								</td>
 							</tr>

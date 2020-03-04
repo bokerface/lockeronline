@@ -31,7 +31,7 @@ class Aps extends MY_Controller
 		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
 		$data['view'] = 'admin/aps/document_type';
 		$this->load->view('admin/layout', $data);
-	}
+	} 
 
 	public function tambah()
 	{
