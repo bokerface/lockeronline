@@ -3,6 +3,15 @@
 <?php 
 	$last = $this->uri->total_segments();
 	$prodi = $this->uri->segment($last); 
+
+	if ($prodi == 'vokasi') {
+		$id_menu = 'vokasi';
+	} elseif ($prodi == 'pascasarjana') {
+		$id_menu = 'pascasarjana';
+	} else {
+		$id_menu = 'fakultas';
+	}
+	
 ?>
 
 <!-- Content Header (Page header) -->
@@ -58,7 +67,7 @@
 		$("#tb_evaluasi").DataTable();
 	});
 
-	$("#fakultas").addClass('menu-open');
-	$("#fakultas .<?=$singkatan_fakultas?> a.nav-link").addClass('active');
+	$("#<?=$id_menu; ?>").addClass('menu-open');
+	$("#<?=$id_menu; ?> .<?=$singkatan_fakultas?> a.nav-link").addClass('active');
 
 </script>

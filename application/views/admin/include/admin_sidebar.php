@@ -55,7 +55,7 @@
 						<a href="<?= base_url() ?>admin/aps/fakultas/<?= $fakultas['singkatan'] ?>" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>
-								Faksultas <?= $fakultas['nama_fakultas'] ?>
+								Fakultas <?= $fakultas['nama_fakultas'] ?>
 							</p>
 						</a>
 					</li>
@@ -73,7 +73,7 @@
 			</li>
 
 			<li class="nav-item has-treeview" id="pascasarjana">
-				<a href="#" class="nav-link">
+				<a href="<?= base_url() ?>admin/aps/fakultas/pascasarjana" class="nav-link">
 					<i class="nav-icon fas fa-search"></i>
 					<p>
 						Pascasarjana
