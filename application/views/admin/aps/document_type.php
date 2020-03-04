@@ -27,8 +27,9 @@
 
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">evaluasi</li>
+					<li class="breadcrumb-item"><a href="#">APS</a></li>
+					<li class="breadcrumb-item active"><?=prodi($prodi)?></li>
+					<li class="breadcrumb-item active"><?=breadcrumb($kategori)?></li>
 				</ol>
 			</div>
 		</div>

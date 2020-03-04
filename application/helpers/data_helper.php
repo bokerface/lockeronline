@@ -34,4 +34,12 @@
 		return $nama_kategori['kategori_dokumen'];
 	}
 
+	function prodi($prodi)
+	{
+		$CI = & get_instance();
+		$query = $CI->db->query('select nama_prodi from prodi where id='.$prodi);
+		$nama_prodi = $query->row_array();
+		return $nama_prodi['nama_prodi'];
+	}
+
 ?> 
