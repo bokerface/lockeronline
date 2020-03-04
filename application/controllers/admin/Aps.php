@@ -97,8 +97,8 @@ class Aps extends MY_Controller
 		$this->db->select('file');
 		$query = $this->db->get_where('dokumen_apt',array('id'=>$id));
 		$path_file = $query->row_array();
-		unlink(BASEPATH.$path_file);
-		//print_r($path_file);
+		unlink(realpath($path_file['file']));
+		// print_r(realpath($path_file['file']));
 		$this->db->delete('dokumen_apt', array('id' => $id));
 		$this->session->set_flashdata('msg', 'Dokumen berhasil dihapus!');
 		redirect(base_url('admin/aps/dokumen/'.$prodi.'/'.$kategori));
