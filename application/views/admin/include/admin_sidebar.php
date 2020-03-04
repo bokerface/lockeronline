@@ -70,7 +70,7 @@
 						Vokasi
 					</p>
 				</a>
-			</li>
+			</li> 
 
 			<li class="nav-item has-treeview" id="pascasarjana">
 				<a href="<?= base_url() ?>admin/aps/fakultas/pascasarjana" class="nav-link">
