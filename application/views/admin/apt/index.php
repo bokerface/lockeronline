@@ -61,7 +61,8 @@
 								<td>
 									<a class="btn btn-file"
 										href="<?= base_url('admin/apt/details/'.$dokumen['id']) ?>"><i
-											class="fa fa-eye"></i></a>
+											class="fa fa-eye"></i>
+									</a>
 									<a class="btn btn-file" href="<?=base_url($dokumen['file'] ); ?>">
 										<i class="fas fa-download"></i>
 									</a>

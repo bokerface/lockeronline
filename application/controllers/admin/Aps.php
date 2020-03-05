@@ -13,6 +13,13 @@ class Aps extends MY_Controller
 	{
 		redirect(base_url('admin/aps/fakultas/ft'));
 	}
+
+	public function details($id)
+	{
+		$data['dokumen'] = $this->aps_model->get_dokumen_by_id($id);
+		$data['view'] = 'admin/detail_dokumen.php';
+		$this->load->view('admin/layout', $data);
+	}
  
 	public function fakultas($fakultas)
 	{

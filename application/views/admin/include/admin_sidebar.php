@@ -72,8 +72,8 @@
 				</a>
 			</li> 
 
-			<li class="nav-item has-treeview" id="pascasarjana">
-				<a href="<?= base_url() ?>admin/aps/fakultas/pascasarjana" class="nav-link">
+			<li class="nav-item has-treeview" id="pps">
+				<a href="<?= base_url() ?>admin/aps/fakultas/pps" class="nav-link">
 					<i class="nav-icon fas fa-search"></i>
 					<p>
 						Pascasarjana

@@ -6,8 +6,8 @@
 
 	if ($prodi == 'vokasi') {
 		$id_menu = 'vokasi';
-	} elseif ($prodi == 'pascasarjana') {
-		$id_menu = 'pascasarjana';
+	} elseif ($prodi == 'pps') {
+		$id_menu = 'pps';
 	} else {
 		$id_menu = 'fakultas';
 	}
