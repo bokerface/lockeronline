@@ -51,7 +51,6 @@
 				</div>
 				<?php } ?>
 			</div>
-
 		</div>
 	</div>
 </section>

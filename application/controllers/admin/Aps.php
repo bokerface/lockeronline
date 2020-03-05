@@ -34,7 +34,8 @@ class Aps extends MY_Controller
 
 	public function dokumen($prodi, $kategori)
 	{
-		$this->db->select('*');
+		//$query = $this->db->select('select id_fakultas from prodi where id='.$prodi);
+		$data['fakultas'] = $this->aps_model->get_fakultas_by_prodi($prodi);
 		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
 		$data['view'] = 'admin/aps/document_type';
 		$this->load->view('admin/layout', $data);
