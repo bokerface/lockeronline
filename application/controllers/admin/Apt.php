@@ -50,7 +50,7 @@ class Apt extends MY_Controller
 		$this->load->view('admin/layout', $data);
 	}
 
-	public function store_borang($kategori)
+	public function store($kategori)
 	{
 		if ($this->input->post('submit')) {
 			$this->form_validation->set_rules('nama', 'Nama Dokumen', 'trim|required');

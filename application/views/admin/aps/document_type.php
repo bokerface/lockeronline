@@ -58,6 +58,7 @@
 						<thead>
 							<tr>
 								<th> Nama Dokumen </th>
+								<th> Tahun Dokumen </th>
 								<th> Deskripsi </th>
 								<th> Download/Hapus Dokumen </th>
 							</tr>
@@ -67,6 +68,7 @@
 							<?php foreach($ambil_dokumen as $dokumen ) { ?>
 							<tr>
 								<td> <?=$dokumen['nama_dokumen']?> </td>
+								<td> <?=$dokumen['tahun']?> </td>
 								<td> <?=$dokumen['deskripsi']?> </td>
 								<td>
 									<a class="btn btn-file"

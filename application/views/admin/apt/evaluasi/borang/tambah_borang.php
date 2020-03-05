@@ -34,7 +34,7 @@
 					<?php 
 					$last = $this->uri->total_segments();
 					$kategori = $this->uri->segment($last); 
-					echo form_open_multipart(base_url('admin/apt/store_borang/'.$kategori), '' )
+					echo form_open_multipart(base_url('admin/apt/store/'.$kategori), '' )
 					?>
 
 					<div class="form-group">
