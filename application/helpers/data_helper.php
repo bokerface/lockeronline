@@ -22,7 +22,7 @@
 	function menu_fakultas()
 	{
 		$CI = & get_instance();
-		$query = $CI->db->query('select * from fakultas where id !=8 and id !=10');
+		$query = $CI->db->query('select * from fakultas where id !=8 and id !=11 and id !=12');
 		return $query->result_array();
 	}
 

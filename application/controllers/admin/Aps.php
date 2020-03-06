@@ -23,7 +23,7 @@ class Aps extends MY_Controller
  
 	public function fakultas($fakultas)
 	{
-		$this->db->select('id');
+		//$this->db->select('id');
 		$query = $this->db->get_where('fakultas', array('singkatan' => $fakultas));
 		$id_fakultas = $query->row_array();
 		$data['ambil_prodi'] = $this->aps_model->ambil_prodi($id_fakultas['id']);

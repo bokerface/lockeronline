@@ -8,6 +8,10 @@
 		$id_menu = 'vokasi';
 	} elseif ($prodi == 'pps') {
 		$id_menu = 'pps';
+	} elseif ($prodi == 'kinter') {
+		$id_menu = 'kinter';
+	} elseif ($prodi == 'pprof') {
+		$id_menu = 'pprof';
 	} else {
 		$id_menu = 'fakultas';
 	}
@@ -22,7 +26,7 @@
 				<h1 class="text-center">Pilih Prodi</h1>
 			</div>
 		</div>
-	</div><!-- /.container-fluid -->
+	</div><!-- /.container-fluid --> 
 </section>
 <!-- Content Header (Page header) -->
 

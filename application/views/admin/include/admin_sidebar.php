@@ -81,6 +81,24 @@
 				</a>
 			</li>
 
+			<li class="nav-item has-treeview" id="kinter">
+				<a href="<?= base_url() ?>admin/aps/fakultas/kinter" class="nav-link">
+					<i class="nav-icon fas fa-search"></i>
+					<p>
+						Kelas Internasional
+					</p>
+				</a>
+			</li>
+
+			<li class="nav-item has-treeview" id="pprof">
+				<a href="<?= base_url() ?>admin/aps/fakultas/pprof" class="nav-link">
+					<i class="nav-icon fas fa-search"></i>
+					<p>
+						Program Profesi
+					</p>
+				</a>
+			</li>
+
 			</li>
 			<!-- /Menu APS -->
 
