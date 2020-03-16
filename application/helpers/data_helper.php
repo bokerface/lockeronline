@@ -15,14 +15,14 @@
 	function menu_category()
 	{
 		$CI = & get_instance();
-		$query = $CI->db->get('kategori_dokumen');
+		$query = $CI->db->query('select * from kategori_dokumen order by sort asc');
 		return $query->result_array();
 	}
   
 	function menu_fakultas()
 	{
 		$CI = & get_instance();
-		$query = $CI->db->query('select * from fakultas where id !=8 and id !=11 and id !=12');
+		$query = $CI->db->query('select * from fakultas where id !=8 and id !=10 and id !=12');
 		return $query->result_array();
 	}
 

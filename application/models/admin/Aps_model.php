@@ -8,11 +8,15 @@
 		}
 
 		public function ambil_prodi($fakultas){
-			$query = $this->db->query('select id,nama_prodi,id_fakultas,singkatan_prodi,(SELECT singkatan from fakultas WHERE id = id_fakultas) AS fakultas_singkatan from prodi WHERE id_fakultas ='.$fakultas);
+			$query = $this->db->query('select id,nama_prodi,id_fakultas,singkatan_prodi,(SELECT singkatan from fakultas WHERE id = id_fakultas) AS fakultas_singkatan from prodi WHERE id_fakultas ='.$fakultas.' order by sort asc');
 			return $query->result_array();
 		}
-
-		
+ 
+		public function get_dokumen_by_id($id)
+		{
+			$query = $this->db->get_where('dokumen_apt', array('id' => $id));
+			return $result = $query->row_array(); 
+		}
 
 		public function ambil_dokumen($prodi,$kategori){ 
 

@@ -11,7 +11,7 @@ class Apt extends MY_Controller
 	public function details($id)
 	{
 		$data['dokumen'] = $this->apt_model->get_dokumen_by_id($id);
-		$data['view'] = 'admin/detail_dokumen.php';
+		$data['view'] = 'admin/borang/detail_dokumen.php';
 		$this->load->view('admin/layout', $data);
 	}
 
@@ -26,27 +26,20 @@ class Apt extends MY_Controller
 		// $query = $this->db->get_where('kategori_dokumen',array('singkatan'=>$kategori));
 		// $kategori = $query->row_array();
 		$data['ambil_dokumen'] = $this->apt_model->ambil_dokumen($id_kategori);
-		$data['view'] = 'admin/apt/index';
-		$this->load->view('admin/layout', $data);
-	}
-
-	public function led()
-	{
-		$data['ambil_lampiran_evaluasi'] = $this->apt_model->ambil_lampiran_evaluasi();
-		$data['view'] = 'admin/apt/evaluasi/lampiran/index';
+		$data['view'] = 'admin/borang/apt/index';
 		$this->load->view('admin/layout', $data);
 	}
 
 	public function kategori()
 	{
 		$data['ambil_kategori'] = $this->apt_model->ambil_kategori();
-		$data['view'] = 'admin/apt/kategori/index_kategori';
+		$data['view'] = 'admin/borang/kategori/index_kategori';
 		$this->load->view('admin/layout', $data);
 	}
 
 	public function tambah()
-	{
-		$data['view'] = 'admin/apt/evaluasi/borang/tambah_borang';
+	{ 
+		$data['view'] = 'admin/borang/apt/tambah_borang';
 		$this->load->view('admin/layout', $data);
 	}
 
@@ -58,7 +51,7 @@ class Apt extends MY_Controller
 			$this->form_validation->set_rules('tahun', 'Tahun Dokumen', 'trim|required');
 
 			if ($this->form_validation->run() == FALSE) {
-				$data['view'] = 'admin/apt/evaluasi/borang/tambah_borang';
+				$data['view'] = 'admin/borang/apt/tambah_borang';
 				$this->load->view('admin/layout', $data);
 			} else {
 
@@ -98,7 +91,7 @@ class Apt extends MY_Controller
 				}
 			}
 		} else {
-			$data['view'] = 'admin/apt/evaluasi/borang/tambah_borang';
+			$data['view'] = 'admin/borang/apt/tambah_borang';
 			$this->load->view('admin/layout', $data);
 		}
 	}

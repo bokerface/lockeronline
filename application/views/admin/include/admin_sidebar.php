@@ -23,7 +23,7 @@
 
 
 			<!-- Menu APT -->
-			<li class="nav-header">APT</li>
+			<li class="nav-header">AKREDITASI PERGURUAN TINGGI</li>
 
 			<?php foreach(menu_category() as $menu) { ?>
 			<li class="nav-item <?= $menu['singkatan'] ?>">
@@ -39,7 +39,7 @@
 			<!-- /Menu APT -->
 
 			<!-- Menu APS -->
-			<li class="nav-header">APS</li>
+			<li class="nav-header">AKREDITASI PROGRAM STUDI</li>
 
 			<li class="nav-item has-treeview" id="fakultas">
 				<a href="#" class="nav-link">
@@ -77,24 +77,6 @@
 					<i class="nav-icon fas fa-search"></i>
 					<p>
 						Pascasarjana
-					</p>
-				</a>
-			</li>
-
-			<li class="nav-item has-treeview" id="kinter">
-				<a href="<?= base_url() ?>admin/aps/fakultas/kinter" class="nav-link">
-					<i class="nav-icon fas fa-search"></i>
-					<p>
-						Kelas Internasional
-					</p>
-				</a>
-			</li>
-
-			<li class="nav-item has-treeview" id="pprof">
-				<a href="<?= base_url() ?>admin/aps/fakultas/pprof" class="nav-link">
-					<i class="nav-icon fas fa-search"></i>
-					<p>
-						Program Profesi
 					</p>
 				</a>
 			</li>

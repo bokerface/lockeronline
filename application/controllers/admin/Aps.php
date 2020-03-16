@@ -17,9 +17,9 @@ class Aps extends MY_Controller
 	public function details($id)
 	{
 		$data['dokumen'] = $this->aps_model->get_dokumen_by_id($id);
-		$data['view'] = 'admin/detail_dokumen.php';
+		$data['view'] = 'admin/borang/detail_dokumen.php';
 		$this->load->view('admin/layout', $data);
-	}
+	} 
  
 	public function fakultas($fakultas)
 	{
@@ -28,7 +28,7 @@ class Aps extends MY_Controller
 		$id_fakultas = $query->row_array();
 		$data['ambil_prodi'] = $this->aps_model->ambil_prodi($id_fakultas['id']);
 		$data['singkatan_fakultas'] = $fakultas;
-		$data['view'] = 'admin/aps/index';
+		$data['view'] = 'admin/borang/aps/list_prodi';
 		$this->load->view('admin/layout', $data);
 	}
 
@@ -37,13 +37,13 @@ class Aps extends MY_Controller
 		//$query = $this->db->select('select id_fakultas from prodi where id='.$prodi);
 		$data['fakultas'] = $this->aps_model->get_fakultas_by_prodi($prodi);
 		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
-		$data['view'] = 'admin/aps/document_type';
+		$data['view'] = 'admin/borang/aps/index';
 		$this->load->view('admin/layout', $data);
 	} 
 
 	public function tambah()
 	{
-		$data['view'] = 'admin/aps/tambah_dokumen';
+		$data['view'] = 'admin/borang/aps/tambah_dokumen'; 
 		$this->load->view('admin/layout', $data);
 	}
 
@@ -55,7 +55,7 @@ class Aps extends MY_Controller
 			$this->form_validation->set_rules('tahun', 'Tahun Dokumen', 'trim|required');
 
 			if ($this->form_validation->run() == FALSE) {
-				$data['view'] = 'admin/apt/evaluasi/borang/tambah_borang';
+				$data['view'] = 'admin/borang/aps/tambah_dokumen';
 				$this->load->view('admin/layout', $data);
 			} else {
 
@@ -91,11 +91,11 @@ class Aps extends MY_Controller
 				$result = $this->aps_model->add_dokumen($data);
 				if ($result) {
 					$this->session->set_flashdata('msg', 'Dokumen baru berhasil ditambahkan!');
-					redirect(base_url('admin/aps/dokumen/' . $prodi . '/' . $kategori));
+					redirect(base_url('admin//aps/dokumen/' . $prodi . '/' . $kategori));
 				}
 			}
 		} else {
-			$data['view'] = 'admin/aps/tambah_dokumen';
+			$data['view'] = 'admin/borang/aps/tambah_dokumen';
 			$this->load->view('admin/layout', $data);
 		}
 	}
@@ -106,7 +106,6 @@ class Aps extends MY_Controller
 		$query = $this->db->get_where('dokumen_apt',array('id'=>$id));
 		$path_file = $query->row_array();
 		unlink(realpath($path_file['file']));
-		// print_r(realpath($path_file['file']));
 		$this->db->delete('dokumen_apt', array('id' => $id));
 		$this->session->set_flashdata('msg', 'Dokumen berhasil dihapus!');
 		redirect(base_url('admin/aps/dokumen/'.$prodi.'/'.$kategori));

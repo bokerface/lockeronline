@@ -13,7 +13,7 @@
 			$query = $this->db->get_where('dokumen_apt', array('id' => $id));
 			return $result = $query->row_array(); 
 		}
-
+ 
 		public function ambil_kategori()
 		{
 			$query = $this->db->query('select kategori_dokumen.id as a, kategori_dokumen.kategori_dokumen as nama_kategori,(select count(id) from dokumen_apt where id_kategori_dokumen = a) as jumlah from `kategori_dokumen`');
