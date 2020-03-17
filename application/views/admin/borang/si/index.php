@@ -12,11 +12,10 @@
 			<div class="col-sm-6">
 				<h1><?=breadcrumb($kategori)?></h1>
 				</br>
-				<a href="<?= base_url('admin/apt/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
+				<a href="<?= base_url('admin/si/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
 					Tambah baru
 				</a>
 			</div>
-
 			<div class="col-sm-6">
 				<ol class="breadcrumb float-sm-right">
 					<li class="breadcrumb-item"><a href="<?= base_url() ?>admin/dashboard">Home</a></li>
@@ -62,14 +61,14 @@
 								<td> <?=$dokumen['deskripsi']?> </td>
 								<td>
 									<a class="btn btn-file"
-										href="<?= base_url('admin/apt/details/'.$dokumen['id']) ?>"><i
+										href="<?= base_url('admin/si/details/'.$dokumen['id']) ?>"><i
 											class="fa fa-eye"></i>
 									</a>
 									<a class="btn btn-file" href="<?=base_url($dokumen['file'] ); ?>">
 										<i class="fas fa-download"></i>
 									</a>
 									<a class="btn btn-file"
-										data-href="<?=base_url('admin/apt/destroy/'.$dokumen['id'].'/'.$dokumen['id_kategori_dokumen']); ?>"
+										data-href="<?=base_url('admin/si/destroy/'.$dokumen['id'].'/'.$dokumen['id_kategori_dokumen']); ?>"
 										data-toggle="modal" data-target="#confirm-delete">
 										<i class="fas fa-trash-alt"></i>
 									</a>

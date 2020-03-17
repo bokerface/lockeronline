@@ -15,7 +15,14 @@
 	function menu_category()
 	{
 		$CI = & get_instance();
-		$query = $CI->db->query('select * from kategori_dokumen order by sort asc');
+		$query = $CI->db->query('select * from kategori_dokumen where id != 18 and id != 19 and id != 20 order by sort asc');
+		return $query->result_array();
+	}
+  
+	function kategori_internasional()
+	{
+		$CI = & get_instance();
+		$query = $CI->db->query('select * from kategori_dokumen where id = 18 or id = 19 or id = 20');
 		return $query->result_array();
 	}
   
@@ -43,3 +50,4 @@
 	}
 
 ?> 
+

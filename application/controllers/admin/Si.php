@@ -1,53 +1,39 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
-class Aps extends MY_Controller
+class SI extends MY_Controller
 {
-
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('admin/aps_model', 'aps_model');
-	}
-
-	public function index()
-	{
-		redirect(base_url('admin/aps/fakultas/ft'));
+		$this->load->model('admin/si_model', 'si_model');
 	}
 
 	public function details($id)
 	{
-		$data['dokumen'] = $this->aps_model->get_dokumen_by_id($id);
+		$data['dokumen'] = $this->si_model->get_dokumen_by_id($id);
 		$data['view'] = 'admin/borang/detail_dokumen.php';
 		$this->load->view('admin/layout', $data);
-	} 
- 
-	public function fakultas($fakultas)
-	{
-		//$this->db->select('id');
-		$query = $this->db->get_where('fakultas', array('singkatan' => $fakultas));
-		$id_fakultas = $query->row_array();
-		$data['ambil_prodi'] = $this->aps_model->ambil_prodi($id_fakultas['id']);
-		$data['singkatan_fakultas'] = $fakultas;
-		$data['view'] = 'admin/borang/aps/list_prodi';
-		$this->load->view('admin/layout', $data);
 	}
 
-	public function dokumen($prodi, $kategori)
+	public function index() 
 	{
-		//$query = $this->db->select('select id_fakultas from prodi where id='.$prodi);
-		$data['fakultas'] = $this->aps_model->get_fakultas_by_prodi($prodi);
-		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
-		$data['view'] = 'admin/borang/aps/index';
+		redirect(base_url('admin/internasional/dokumen/14'));
+	}
+
+	public function dokumen($id_kategori)
+	{
+		$data['ambil_dokumen'] = $this->si_model->ambil_dokumen($id_kategori);
+		$data['view'] = 'admin/borang/si/index';
 		$this->load->view('admin/layout', $data);
-	} 
+	}
 
 	public function tambah()
-	{
-		$data['view'] = 'admin/borang/aps/tambah_dokumen'; 
+	{ 
+		$data['view'] = 'admin/borang/si/tambah_dokumen';
 		$this->load->view('admin/layout', $data);
 	}
 
-	public function store($prodi, $kategori)
+	public function store($kategori)
 	{
 		if ($this->input->post('submit')) {
 			$this->form_validation->set_rules('nama', 'Nama Dokumen', 'trim|required');
@@ -55,7 +41,7 @@ class Aps extends MY_Controller
 			$this->form_validation->set_rules('tahun', 'Tahun Dokumen', 'trim|required');
 
 			if ($this->form_validation->run() == FALSE) {
-				$data['view'] = 'admin/borang/aps/tambah_dokumen';
+				$data['view'] = 'admin/borang/si/tambah_borang';
 				$this->load->view('admin/layout', $data);
 			} else {
 
@@ -81,34 +67,30 @@ class Aps extends MY_Controller
 				$data = array(
 					'nama_dokumen' => $this->input->post('nama'),
 					'deskripsi' => $this->input->post('deskripsi'),
-					'id_prodi' => $prodi,
+					'id_prodi' => '',
 					'id_kategori_dokumen' => $kategori,
 					'tahun' => $this->input->post('tahun'),
 					'file' => $upload_path . '/' . $dokumen['file_name'],
+					'internasional' => 'si',
 				);
 
 				$data = $this->security->xss_clean($data);
-				$result = $this->aps_model->add_dokumen($data);
+				$result = $this->si_model->add_evaluasi_borang($data);
 				if ($result) {
 					$this->session->set_flashdata('msg', 'Dokumen baru berhasil ditambahkan!');
-					redirect(base_url('admin//aps/dokumen/' . $prodi . '/' . $kategori));
+					redirect(base_url('admin/si/dokumen/' . $kategori));
 				}
 			}
 		} else {
-			$data['view'] = 'admin/borang/aps/tambah_dokumen';
+			$data['view'] = 'admin/borang/si/tambah_dokumen';
 			$this->load->view('admin/layout', $data);
 		}
 	}
 
-	public function destroy($id,$prodi,$kategori)
+	public function destroy($id,$kategori)
 	{
-		$this->db->select('file');
-		$query = $this->db->get_where('dokumen_apt',array('id'=>$id));
-		$path_file = $query->row_array();
-		unlink(realpath($path_file['file']));
 		$this->db->delete('dokumen_apt', array('id' => $id));
 		$this->session->set_flashdata('msg', 'Dokumen berhasil dihapus!');
-		redirect(base_url('admin/aps/dokumen/'.$prodi.'/'.$kategori));
+		redirect(base_url('admin/si/dokumen/'.$kategori));
 	}
 }
-
