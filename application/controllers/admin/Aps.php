@@ -9,6 +9,11 @@ class Aps extends MY_Controller
 		$this->load->model('admin/aps_model', 'aps_model');
 	}
 
+	public function not_found()
+	{
+		$this->load->view('admin/borang/not_found');
+	}
+
 	public function index()
 	{
 		redirect(base_url('admin/aps/fakultas/ft'));
@@ -38,7 +43,7 @@ class Aps extends MY_Controller
 		$data['fakultas'] = $this->aps_model->get_fakultas_by_prodi($prodi);
 		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
 		$data['view'] = 'admin/borang/aps/index';
-		$this->load->view('admin/layout', $data);
+		$this->load->view('admin/layout', $data); 
 	} 
 
 	public function tambah()
