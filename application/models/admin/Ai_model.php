@@ -5,7 +5,7 @@
 			$query = $this->db->get_where('dokumen_apt',array('id_kategori_dokumen'=>$id_kategori,'id_prodi'=>0,'internasional'=>'ai'));
 			return $query->result_array();
 		} 
-
+ 
 		public function get_dokumen_by_id($id)
 		{
 			$query = $this->db->get_where('dokumen_apt', array('id' => $id));

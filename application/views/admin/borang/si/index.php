@@ -10,7 +10,7 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1><?=breadcrumb($kategori)?></h1>
+				<h1>Sertifikasi Internasional : <?=breadcrumb($kategori)?></h1>
 				</br>
 				<a href="<?= base_url('admin/si/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
 					Tambah baru

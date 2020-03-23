@@ -91,6 +91,6 @@ class AI extends MY_Controller
 	{
 		$this->db->delete('dokumen_apt', array('id' => $id));
 		$this->session->set_flashdata('msg', 'Dokumen berhasil dihapus!');
-		redirect(base_url('admin/apt/dokumen/'.$kategori));
+		redirect(base_url('admin/ai/dokumen/'.$kategori));
 	}
 }

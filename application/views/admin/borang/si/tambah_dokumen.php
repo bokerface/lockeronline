@@ -1,9 +1,15 @@
+<?php
+$last = $this->uri->total_segments();
+$kategori = $this->uri->segment($last);
+echo form_open_multipart(base_url('admin/si/store/' . $kategori), '')
+?>
+
 <!-- Content Header (Page header) -->
 <section class="content-header">
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-sm-6">
-				<h1>Tambah baru</h1>
+				<h1>Sertifikasi Internasional : <?= breadcrumb($kategori) ?></h1>
 			</div>
 			<div class="col-sm-6">
 
@@ -17,12 +23,12 @@
 	<div class="row">
 
 		<div class="col-12">
-			<?php if(isset($msg) || validation_errors() !== ''): ?>
+			<?php if (isset($msg) || validation_errors() !== '') : ?>
 			<div class="alert alert-danger alert-dismissible">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 				<h4><i class="fa fa-exclamation"></i> Terjadi Kesalahan</h4>
-				<?= validation_errors();?>
-				<?= isset($msg)? $msg: ''; ?>
+				<?= validation_errors(); ?>
+				<?= isset($msg) ? $msg : ''; ?>
 			</div>
 			<?php endif; ?>
 		</div>
@@ -30,12 +36,8 @@
 		<div class="col-md-6">
 			<div class="card card-success card-outline">
 				<div class="card-body box-profile">
- 
-					<?php 
-						$last = $this->uri->total_segments();
-						$kategori = $this->uri->segment($last); 
-						echo form_open_multipart(base_url('admin/si/store/'.$kategori), '' )
-					?>
+
+
 
 					<div class="form-group">
 						<div class="mt-3">
@@ -67,7 +69,7 @@
 						</div>
 					</div>
 
-					<?php echo form_close( ); ?>
+					<?php echo form_close(); ?>
 
 				</div>
 			</div>
