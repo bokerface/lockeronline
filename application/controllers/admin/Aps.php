@@ -46,6 +46,12 @@ class Aps extends MY_Controller
 		$this->load->view('admin/layout', $data); 
 	} 
 
+	public function kategori($id)
+	{
+		$data['view'] = 'admin/borang/aps/list_menu';
+		$this->load->view('admin/layout',$data); 
+	}
+
 	public function tambah()
 	{
 		$data['view'] = 'admin/borang/aps/tambah_dokumen'; 

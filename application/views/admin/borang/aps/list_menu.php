@@ -14,8 +14,7 @@
 		$id_menu = 'pprof';
 	} else {
 		$id_menu = 'fakultas';
-	} 
-	
+	}
 ?>
 
 <!-- Content Header (Page header) -->
@@ -23,7 +22,8 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-12">
-				<h1 class="text-center">Pilih Prodi</h1>
+			<?php print_r($prodi); ?>
+				<h1 class="text-center">Pilih Menu</h1>
 			</div>
 		</div>
 	</div><!-- /.container-fluid --> 
@@ -37,21 +37,11 @@
 		<div class="col-12">
 
 			<div class="list-group col-6 mx-auto">
-				<?php foreach ($ambil_prodi as $prodi) { ?>
+				<?php foreach (menu_category() as $kategori) { ?>
 				<div class="btn-group">
-					<a href="<?= base_url() ?>admin/aps/kategori/<?= $prodi['id'] ?> " class="list-group-item list-group-item-action">
-						<?= $prodi['nama_prodi'] ?>
+					<a href="<?= base_url() ?>admin/aps/dokumen/<?php echo $prodi?>/<?php echo $kategori['id']?>"  class="list-group-item list-group-item-action">
+						<?= $kategori['kategori_dokumen'] ?>
 					</a>
-					<!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span class="sr-only">Toggle Dropdown</span>
-					</button>
-					<div class="dropdown-menu">
-						<?php foreach (menu_category() as $kategori) { ?>
-						<a class="dropdown-item"
-							href="<?= base_url() ?>admin/aps/dokumen/<?php echo $prodi['id']?>/<?php echo $kategori['id']?>"><?= $kategori['kategori_dokumen'] ?></a>
-						<?php } ?>
-					</div> -->
 				</div>
 				<?php } ?>
 			</div>
