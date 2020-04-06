@@ -22,7 +22,6 @@
 	<div class="container-fluid">
 		<div class="row mb-2">
 			<div class="col-12">
-			<?php print_r($prodi); ?>
 				<h1 class="text-center">Pilih Menu</h1>
 			</div>
 		</div>
