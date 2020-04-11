@@ -33,6 +33,7 @@ class Aps extends MY_Controller
 		$id_fakultas = $query->row_array();
 		$data['ambil_prodi'] = $this->aps_model->ambil_prodi($id_fakultas['id']);
 		$data['singkatan_fakultas'] = $fakultas;
+		$data['fakult'] = $id_fakultas;
 		$data['view'] = 'admin/borang/aps/list_prodi';
 		$this->load->view('admin/layout', $data);
 	}
@@ -40,6 +41,13 @@ class Aps extends MY_Controller
 	public function dokumen($prodi, $kategori)
 	{
 		//$query = $this->db->select('select id_fakultas from prodi where id='.$prodi);
+		$query2 = $this->db->query('select id_fakultas from prodi where id='.$prodi);
+		$result = $query2->row();
+		$id_fakultas = $result->id_fakultas;
+		$get_fakultas = $this->db->get_where('fakultas',array('id'=>$id_fakultas));
+		$result2 = $get_fakultas->row();
+		$class_menu = $result2->singkatan;
+		$data['class_menu'] = $class_menu;
 		$data['fakultas'] = $this->aps_model->get_fakultas_by_prodi($prodi);
 		$data['ambil_dokumen'] = $this->aps_model->ambil_dokumen($prodi, $kategori);
 		$data['view'] = 'admin/borang/aps/index';
@@ -48,6 +56,18 @@ class Aps extends MY_Controller
 
 	public function kategori($id)
 	{
+		$query = $this->db->get_where('prodi', array('id' => $id));
+		$id_prodi = $query->row_array();
+		$query2 = $this->db->query('select id_fakultas from prodi where id='.$id);
+		$result = $query2->row();
+		$id_fakultas = $result->id_fakultas;
+		$get_fakultas = $this->db->get_where('fakultas',array('id'=>$id_fakultas));
+		$result2 = $get_fakultas->row();
+		$fakultas = $result2->nama_fakultas;
+		$class_menu = $result2->singkatan;
+		$data['fakult'] = $fakultas;
+		$data['class_menu'] = $class_menu;
+		$data['nama_prodi'] = $id_prodi;
 		$data['view'] = 'admin/borang/aps/list_menu';
 		$this->load->view('admin/layout',$data); 
 	}

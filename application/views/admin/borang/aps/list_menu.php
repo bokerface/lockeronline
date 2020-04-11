@@ -20,10 +20,22 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
 	<div class="container-fluid">
-		<div class="row mb-2">
-			<div class="col-12">
+	<div class="row mb-2 mt-5">
+			<div class="col-4">
+				<h1><?= $nama_prodi['nama_prodi'] ?> </h1>
+			</div>
+
+			<div class="col-4">
 				<h1 class="text-center">Pilih Menu</h1>
 			</div>
+
+			<div class="col-4">
+				<ol class="breadcrumb float-sm-right">
+					<li class="breadcrumb-item"><a href=""></a>Fakultas <?php echo($fakult) ?></li>
+					<li class="breadcrumb-item"><a href=""></a><?= $nama_prodi['nama_prodi'] ?></li>
+				</ol>
+			</div>
+			
 		</div>
 	</div><!-- /.container-fluid --> 
 </section>
@@ -55,11 +67,8 @@
 
 <!-- page script -->
 <script>
-	$(function () {
-		$("#tb_evaluasi").DataTable();
-	});
 
-	$("#<?=$id_menu; ?>").addClass('menu-open');
-	$("#<?=$id_menu; ?> .<?=$singkatan_fakultas?> a.nav-link").addClass('active');
+	$("#<?= $id_menu; ?>").addClass('menu-open');
+	$("#<?= $id_menu; ?> .<?= $class_menu; ?> a.nav-link").addClass('active');
 
 </script>

@@ -53,7 +53,7 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item <?= $fakultas['singkatan'] ?>">
 						<a href="<?= base_url() ?>admin/aps/fakultas/<?= $fakultas['singkatan'] ?>" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
+							<i class="far fa-circle nav-icon"></i> 
 							<p>
 								Fakultas <?= $fakultas['nama_fakultas'] ?>
 							</p>
