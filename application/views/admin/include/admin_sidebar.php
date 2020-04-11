@@ -19,7 +19,7 @@
 						Beranda
 					</p>
 				</a>
-			</li>
+			</li> 
 
 
 			<!-- Menu APT -->

@@ -63,7 +63,7 @@ class Aps extends MY_Controller
 		$id_fakultas = $result->id_fakultas;
 		$get_fakultas = $this->db->get_where('fakultas',array('id'=>$id_fakultas));
 		$result2 = $get_fakultas->row();
-		$fakultas = $result2->nama_fakultas;
+		$fakultas = $result2->nama_fakultas; 
 		$class_menu = $result2->singkatan;
 		$data['fakult'] = $fakultas;
 		$data['class_menu'] = $class_menu;

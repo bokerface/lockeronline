@@ -14,6 +14,7 @@
 				</br>
 				<a href="<?= base_url('admin/apt/tambah/'.$kategori)?>" class="btn btn-sm btn-default">
 					Tambah baru
+					<?=$kategori?>
 				</a>
 			</div>
 
@@ -128,6 +129,6 @@
 		$("#tb_evaluasi").DataTable();
 	});
 
-	$(".<?=$kategori?> a.nav-link").addClass('active');
+	$(".<?=$class_menu?> a.nav-link").addClass('active'); 
 
 </script>

@@ -135,7 +135,6 @@
 <script>
 	$(function () {
 		$("#tb_evaluasi").DataTable();
-		
 	});
-</script>
+</script> 
 

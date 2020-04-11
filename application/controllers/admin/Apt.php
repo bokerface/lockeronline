@@ -25,7 +25,11 @@ class Apt extends MY_Controller
 		// $this->db->select('id');
 		// $query = $this->db->get_where('kategori_dokumen',array('singkatan'=>$kategori));
 		// $kategori = $query->row_array();
+		$get_kategori = $this->db->get_where('kategori_dokumen',array('id'=>$id_kategori));
+		$resultRow = $get_kategori->row();
+		$class_menu = $resultRow->singkatan;
 		$data['ambil_dokumen'] = $this->apt_model->ambil_dokumen($id_kategori);
+		$data['class_menu'] = $class_menu;
 		$data['view'] = 'admin/borang/apt/index';
 		$this->load->view('admin/layout', $data);
 	}
